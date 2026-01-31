@@ -1,0 +1,19 @@
+from random import randint
+#randint is probably a collection of 1,000 1's and zero's spawned off the flow of electricity in a list, squared.
+
+
+d = {}
+e = []
+i=1
+while i < 1000:
+    b = i
+    if i > 1:
+        b+=1
+    c = b+1
+    if markov_complexity(i*b/c) > 60:
+        d[str(i+b) + str(c)] = i*b/c
+        e.append(str(i+b) + str(c))
+    i+=1
+
+if time.delta(1):
+    password = d[e[randint(0,len(e)-1)]]
