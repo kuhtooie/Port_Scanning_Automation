@@ -11,7 +11,7 @@ while i < 1000:
         b+=1
     c = b+1
     if markov_complexity(i*b/c) > 60:
-        d[str(i+b) + str(c)] = i*b/c
+        d[str(i*b) + str(c)] = i*b/c
         e.append(str(i+b) + str(c))
     i+=1
 
