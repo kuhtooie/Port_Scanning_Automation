@@ -5,14 +5,16 @@ from random import randint
 d = {}
 e = []
 i=1
+gg=2
 while i < 1000:
     b = i
     if i > 1:
         b+=1
     c = b+1
     if markov_complexity(i*b/c) > 60:
-        d[str(i*b) + str(c)] = i*b/c
-        e.append(str(i*b) + str(c))
+        d[str(i+b) + str(c)] = [i*b/c,sum([i,c,b])**gg]
+
+        e.append(str(i+b) + str(c))
     i+=1
 
 if time.delta(1):
