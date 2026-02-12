@@ -18,4 +18,4 @@ while i < 1000:
     i+=1
 
 if time.delta(1):
-    password = d[e[randint(0,len(e)-1)]]
+    password = d[e[randint(0,len(e)-1)]][randint(0,1)]
