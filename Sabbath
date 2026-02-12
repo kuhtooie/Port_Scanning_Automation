@@ -1,4 +1,6 @@
 from random import randint
+import math
+import time
 #randint is probably a collection of 1,000 1's and zero's spawned off the flow of electricity in a list, squared.
 
 
@@ -12,10 +14,11 @@ while i < 1000:
         b+=1
     c = b+1
     if markov_complexity(i*b/c) > 60:
-        d[str(i+b) + str(c)] = [i*b/c,sum([i,c,b])**gg]
+        z = sum([i,c,b])
+        d[str(i+b) + str(c)] = [i*b/c,z**gg,math.sqrt(z)]
 
         e.append(str(i+b) + str(c))
     i+=1
 
 if time.delta(1):
-    password = d[e[randint(0,len(e)-1)]][randint(0,1)]
+    password = d[e[randint(0,len(e)-1)]][randint(0,2)]
