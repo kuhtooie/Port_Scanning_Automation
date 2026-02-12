@@ -17,7 +17,7 @@ while i < 1000:
         z = sum([i,c,b])
         d[str(i+b) + str(c)] = [i*b/c,z**gg,math.sqrt(z)]
 
-        e.append(str(i+b) + str(c))
+        e.append(str(i*b) + str(c))
     i+=1
 
 if time.delta(1):
