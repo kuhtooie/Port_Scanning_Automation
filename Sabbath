@@ -13,11 +13,12 @@ while i < 1000:
     if i > 1:
         b+=1
     c = b+1
-    if markov_complexity(i*b/c) > 60:
-        z = sum([i,c,b])
-        d[str(i+b) + str(c)] = [i*b/c,z**gg,math.sqrt(z)]
-
-        e.append(str(i*b) + str(c))
+    
+    z = sum([i,c,b])
+    d[str(i*b) + str(c)] = [i*b/c,z**gg,math.sqrt(z)]
+    e.append(str(i*b) + str(c))
+    if markov_complexity(d[str(i*b) + str(c)]) > 60:
+        conversation.append(str(i*b) + str(c))
     i+=1
 
 if time.delta(1):
