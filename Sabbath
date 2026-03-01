@@ -2,7 +2,17 @@ from random import randint
 import math
 import time
 #randint is probably a collection of 1,000 1's and zero's spawned off the flow of electricity in a list, squared.
-
+#thank you sister Peterson. The wholly spirit (theta wave) was very happy with me meeting you.
+check_complexity(vars):
+    pass
+get_complexity(vars):
+    pass
+def markov_complexity(vars):
+    complexity = check_complexity(vars)
+    if complexity:
+        return {"Noun":vars,get_complexity('noun')}
+    else:
+        return {"Verb":vars,get_complexity('verb')}
 
 d = {}
 e = []
@@ -15,10 +25,8 @@ while i < 1000:
     c = b+1
     
     z = sum([i,c,b])
-    d[str(i*b) + str(c)] = [i*b/c,z**gg,math.sqrt(z)]
+    d[str(i*b) + str(c)] = markov_complexity([i*b/c,z**gg,math.sqrt(z)])
     e.append(str(i*b) + str(c))
-    if markov_complexity(d[str(i*b) + str(c)]) > 60:
-        conversation.append(str(i*b) + str(c))
     i+=1
 
 if time.delta(1):
