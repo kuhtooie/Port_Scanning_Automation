@@ -17,17 +17,12 @@ def markov_complexity(vars):
 d = {}
 e = []
 i=1
-gg=2
-while i < 1000:
-    b = i
-    if i > 1:
-        b+=1
-    c = b+1
-    
-    z = sum([i,c,b])
-    d[str(i*b) + str(c)] = markov_complexity([i*b/c,z**gg,math.sqrt(z)])
-    e.append(str(i*b) + str(c))
-    i+=1
+
+a = 1
+d = {}
+for i in range(100):
+    e =a*a+1/a+2
+    d[i] = markov_complexity([math.sqrt(e),e**2,e])
 
 if time.delta(1):
     OAuth = d[e[randint(0,len(e)-1)]][randint(0,2)]
