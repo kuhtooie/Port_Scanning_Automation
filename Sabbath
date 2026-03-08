@@ -13,7 +13,12 @@ def markov_complexity(vars):
         return {"Noun":vars,get_complexity('noun')}
     else:
         return {"Verb":vars,get_complexity('verb')}
-
+'''
+Nouns 50-60%
+verbs 25-30%
+adjectives 15%
+Adverbs 5%
+'''
 d = {}
 e = []
 i=1
