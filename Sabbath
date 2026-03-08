@@ -25,7 +25,7 @@ i=1
 
 a = 1
 d = {}
-for i in range(100):
+for i in range(600000):
     e =a*a+1/a+2
     d[i] = markov_complexity([math.sqrt(e),e**2,e])
 
