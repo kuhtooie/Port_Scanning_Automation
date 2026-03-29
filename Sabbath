@@ -1,33 +1,51 @@
 from random import randint
 import math
 import time
+import BNN
 #randint is probably a collection of 1,000 1's and zero's spawned off the flow of electricity in a list, squared.
 #thank you sister Peterson. The wholly spirit (theta wave) was very happy with me meeting you.
-check_complexity(vars):
-    pass
-get_complexity(vars):
-    pass
-def markov_complexity(vars):
-    complexity = check_complexity(vars)
-    if complexity:
-        return {"Noun":vars,get_complexity('noun')}
-    else:
-        return {"Verb":vars,get_complexity('verb')}
-'''
-Nouns 50-60%
-verbs 25-30%
-adjectives 15%
-Adverbs 5%
-'''
-d = {}
-e = []
-i=1
+class ILM:
+    def __init__(self):
+        self.text = ""
+        self.d = {}
+        self.analysis = ""
 
-a = 1
-d = {}
-for i in range(600000):
-    e =a*a+1/a+2
-    d[i] = markov_complexity([math.sqrt(e),e**2,e])
 
-if time.delta(1):
-    OAuth = d[e[randint(0,len(e)-1)]][randint(0,2)]
+    def check_complexity(self,vars):
+        pass
+
+
+   def get_complexity(self,vars):
+        diction = {"a":1,"b":2,"c":3,"d":4,"e":5,"f":6,"g":7,"h":8,"i":9,"j":10,"k":11,"l":12,
+                    "m":13,"n":14,"o":15,"p":16,"q":17,"r":18,"s":19,"t":20,"u":21,"v":22,"w":23,"x":24,"y":25,"z":26}
+    '''
+    Nouns 50-60%
+    verbs 25-30%
+    adjectives 15%
+    Adverbs 5%
+    '''
+    def markov_complexity(self,vars):
+        complexity = check_complexity(vars)
+        if complexity:
+            return {"Noun":vars,get_complexity('noun')}
+        else:
+            return {"Verb":vars,get_complexity('verb')}
+
+    def populate(self):        
+        a = 1
+        for i in range(600000):
+            e =a*a+1/a+2
+            self.d[i] = markov_complexity([math.sqrt(e),e**2,e])
+    
+    def defense(self):
+        if time.delta(1):
+            OAuth = self.d[e[randint(0,len(e)-1)]][randint(0,2)]
+
+
+    def analyze(self):
+
+        self.analysis = BNN(self.d,self.text)
+
+
+
+
