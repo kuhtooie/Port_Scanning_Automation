@@ -1,4 +1,5 @@
 from random import randint
+from Encryption import Hash_LLM
 import math
 import time
 import BNN
@@ -43,8 +44,9 @@ class ILM:
 
 
     def analyze(self):
+        llm = Hash_LLM()
 
-        self.analysis = BNN(self.d,self.text)
+        self.analysis = BNN(self.d,self.text,llm.translate(self.text)
 
 
 
