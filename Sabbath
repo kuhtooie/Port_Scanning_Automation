@@ -1,5 +1,5 @@
 from random import randint
-from Encryption import Hash_LLM
+from Encryption import Hash_LLM, RRA.Recursive_Digit_Generator
 import math
 import time
 import BNN
@@ -10,6 +10,7 @@ class ILM:
         self.text = ""
         self.d = {}
         self.analysis = ""
+        self.generator = Recursive_Digit_Generator()
 
 
     def check_complexity(self,vars):
@@ -26,7 +27,7 @@ class ILM:
     Adverbs 5%
     '''
     def markov_complexity(self,vars):
-        complexity = check_complexity(vars)
+        complexity = self.check_complexity(vars)
         if complexity:
             return {"Noun":vars,get_complexity('noun')}
         else:
@@ -36,7 +37,7 @@ class ILM:
         a = 1
         for i in range(600000):
             e =a*a+1/a+2
-            self.d[i] = markov_complexity([math.sqrt(e),e**2,e])
+            self.d[i] = self.markov_complexity([self.generator.S_sqrt(a*a+1,a+2,100),e**2,self.generator.divide(a*a+1,a+2,32)])
     
     def defense(self):
         if time.delta(1):
