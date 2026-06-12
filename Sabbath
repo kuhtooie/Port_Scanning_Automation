@@ -33,11 +33,14 @@ class ILM:
         else:
             return {"Verb":vars,get_complexity('verb')}
 
-    def populate(self):        
+    def populate_1(self):        
         a = 1
         for i in range(600000):
             e =a*a+1/a+2
             self.d[i] = self.markov_complexity([self.generator.S_sqrt(a*a+1,a+2,100),e**2,self.generator.divide(a*a+1,a+2,32)])
+
+    def populate_2(self,first,second,base,multiply):
+        return int((first*multiply)+base) / int((second*str(int(multiply)+1))+base) 
     
     def defense(self):
         if time.delta(1):
